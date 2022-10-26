@@ -1,0 +1,36 @@
+<div class="bg-dark vh-100 navPadding">
+
+    <header>
+        <nav class="nav bg-secondary navbar-dark" style="margin-bottom: 15px">
+            <div class="container-fluid" style="padding: 15px">
+                <a class="btn btn-danger float-end" ui-sref="contatos({id: idPessoa})">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+                <h1 style="color: whitesmoke">Novo Contato</h1>
+            </div>
+        </nav>
+    </header>
+
+<!--    <input hidden ng-model="idPessoa">-->
+
+    <fieldset class="bg-light div-table" style="display: block">
+        <form name="formContato">
+            <div class="form-group">
+                <label for="contatoNome">Nome Contato</label>
+                <input type="text" id="contatoNome" class="form-control"
+                       ng-model="contato.nome" ng-required="true">
+            </div>
+            <div class="form-group col">
+                <label for="contatoEmail">E-mail Contato</label>
+                <input type="email" id="contatoEmail" class="form-control"
+                       ng-model="contato.email" ng-required="true">
+            </div>
+            <div class="form-group col">
+                <label for="contatoTelefone">Telefone Contato</label>
+                <input type="text" id="contatoTelefone" class="form-control"
+                       ng-model="contato.telefone" ui-br-phone-number-mask ng-required="true">
+            </div>
+            <button class="btn btn-success" ng-click="salvaContato(contato)" ng-disabled="formContato.$invalid">Salvar</button>
+        </form>
+    </fieldset>
+</div>

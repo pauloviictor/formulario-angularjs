@@ -1,0 +1,21 @@
+#fieldsetContatos{
+    width: 70vw;
+    padding: 0px 12px;
+    border-radius: 25px;
+    display: flex;
+    margin: 15px auto;
+}
+
+#fieldsetContatos i{
+    font-size: 18px;
+}
+
+.bg-dark #btn-addContato{
+    display: flex;
+    width: 130px;
+    margin: 15px auto;
+}
+
+i{
+    font-size: 24px ;
+}

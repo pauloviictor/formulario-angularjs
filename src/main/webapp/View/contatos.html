@@ -1,0 +1,61 @@
+<div class="bg-dark navPadding vh-100">
+    <header>
+        <nav class="nav bg-secondary navbar-dark" style="margin-bottom: 15px">
+            <div class="container-fluid" style="padding: 15px">
+                <a class="btn btn-danger float-end" ui-sref="editaCadastro({id: idPessoa})">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+                <a class="btn btn-primary float-end" ui-sref="novoContato({id: idPessoa})">
+                    <i class="fa-solid fa-user-plus"></i>
+                </a>
+                <h1 style="color: whitesmoke">Contatos</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div class="div-table">
+        <fieldset class="bg-light">
+            <table class="table text-center">
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Excluir</th>
+                </tr>
+                <tr ng-repeat="contato in contatos">
+                    <td class="form-group col">
+                        <input type="text" id="idPessoa" ng-model="idPessoa" hidden>
+                        {{contato.nome}}
+                    </td>
+                    <td class="form-group col">
+                        {{contato.email}}
+                    </td>
+                    <td class="form-group col">
+                        {{contato.telefone}}
+                    </td>
+                    <td class="form-group col">
+                        <btn class="btn" ng-click="removeContato(contato.id)">
+                            <i class="fa-solid fa-trash"></i>
+                        </btn>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <!--    <div class="form-group col text-white">-->
+    <!--        <input type="text" id="idPessoa" hidden>-->
+    <!--        <label for="contatoNome">Nome Contato</label>-->
+    <!--        <input type="text" id="contatoNome" class="form-control"-->
+    <!--               ng-model="contato.nome">-->
+    <!--    </div>-->
+    <!--    <div class="form-group col">-->
+    <!--        <label for="contatoEmail">E-mail Contato</label>-->
+    <!--        <input type="text" id="contatoEmail" class="form-control"-->
+    <!--               ng-model="contato.email">-->
+    <!--    </div>-->
+    <!--    <div class="form-group col">-->
+    <!--        <label for="contatoTelefone">Telefone Contato</label>-->
+    <!--        <input type="text" id="contatoTelefone" class="form-control"-->
+    <!--               ng-model="contato.telefone">-->
+    <!--    </div>-->
+</div>

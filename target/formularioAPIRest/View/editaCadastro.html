@@ -1,0 +1,73 @@
+<div class="bg-dark vh-100" ng-controller="editaCadastroControll">
+    <header>
+        <nav class="nav navbar-expand bg-secondary navbar-dark">
+            <div class="container-fluid" style="padding: 15px">
+                <a class="btn btn-danger float-end" ui-sref="listaCadastros">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+                <a class="btn btn-primary float-end" ui-sref="contatos({id: pessoa.id})">
+                    Contatos <i class="fa-solid fa-address-book"></i>
+                </a>
+                <h1 style="color: whitesmoke">Dados Cadastro</h1>
+            </div>
+        </nav>
+    </header>
+    <div class="forms">
+        <fieldset class="bg-light" id="fieldsetDados">
+            <form id="formDados">
+                <div class="form-group">
+                    <h2>Dados Pessoais</h2>
+                </div>
+                <hr>
+                <div class="row">
+                    <input hidden type="text" ng-model="pessoa.id">
+                    <div class=" form-group col">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" class="form-control" ng-model="pessoa.nome">
+                    </div>
+                    <div class="form-group col">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" class="form-control" ng-model="pessoa.cpf" ui-br-cpf-mask>
+                    </div>
+                    <div class="form-group col">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" class="form-control" ng-model="pessoa.email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="escolaridade">Escolaridade</label>
+                        <select id="escolaridade" class="form-select" ng-model="pessoa.escolaridade"
+                                ng-options="escolaridade for escolaridade in escolaridades">
+                            <option value="" disabled>Escolha</option>
+                        </select>
+                    </div>
+                    <div class=" form-group col">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" class="form-control" ng-model="pessoa.endereco.cidade">
+                    </div>
+                    <div class="form-group col">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" class="form-control" ng-model="pessoa.endereco.estado">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="logradouro">Logradouro</label>
+                        <input type="text" id="logradouro" class="form-control" ng-model="pessoa.endereco.logradouro">
+                    </div>
+                    <div class="form-group col">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" id="complemento" class="form-control" ng-model="pessoa.endereco.complemento">
+                    </div>
+                </div>
+                <button class="btn btn-success" style="display: flex; margin: 15px auto"
+                        ng-click="editaPessoa(pessoa)"
+                        ng-disabled="isPessoaEmpty(pessoa)">
+                    Salvar
+                </button>
+            </form>
+        </fieldset>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="bg-dark vh-100">
+    <header>
+        <nav class="nav navbar-expand bg-secondary navbar-dark">
+            <div class="container-fluid" style="padding: 15px">
+                <a class="btn btn-primary float-end" ui-sref="adicionaCadastro"><i
+                        class="fa-solid fa-person-circle-plus"></i></a>
+                <h1 style="color: whitesmoke">Cadastros</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div ng-controller="listaCadastrosControll">
+        <!--    <h1 style="color: whitesmoke">{{message}}</h1>-->
+        <div class="div-table">
+            <fieldset class="bg-light">
+                <table name="listaCadastro" class="table table-striped">
+                    <tr class="row" style="border-top-right-radius: 25px; border-top-left-radius: 25px">
+                        <th class="col-4 text-center">
+                            <h3>Nome</h3>
+                        </th>
+                        <th class="col-4 text-center">
+                            <h3>E-mail</h3>
+                        </th>
+                        <th class="col text-center">
+                            <h3>Acessar</h3>
+                        </th>
+                        <th class="col text-center">
+                            <h3>Excluir</h3>
+                        </th>
+                    </tr>
+
+                    <tr class="row" ng-repeat="pessoa in pessoas">
+                        <td class="col-4 text-center">
+                            {{pessoa.nome}}
+                        </td>
+                        <td class="col-4 text-center">
+                            {{pessoa.email}}
+                        </td>
+                        <td class="col text-center">
+                            <button class="btn" ui-sref="editaCadastro({id: {{pessoa.id}}})" >
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </td>
+                        <td class="col text-center">
+                            <btn class="btn" ng-click="removeCadastro(pessoa.id)">
+                                <i class="fa-solid fa-trash"></i>
+                            </btn>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</div>

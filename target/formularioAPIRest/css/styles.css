@@ -1,0 +1,57 @@
+.div-table {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 15px;
+}
+
+fieldset {
+    width: 70vw;
+    padding: 0px 12px;
+    border-radius: 25px;
+}
+
+table {
+    background: none;
+    border: none;
+}
+
+i {
+    font-size: 24px;
+}
+
+.form-group {
+    margin: 10px
+}
+
+.forms #fieldsetDados {
+    width: 70vw;
+    padding: 0px 12px;
+    border-radius: 25px;
+    display: flex;
+    margin: 15px auto
+}
+
+.forms #formDados {
+    width: 100vw;
+    padding: 20px
+}
+
+a {
+    margin: 5px;
+}
+
+/*input.ng-valid.ng-touched {*/
+/*    background-color: #BCFFBA;*/
+/*    border: 1px solid #73B370*/
+/*}*/
+
+input.ng-valid.ng-touched {
+    background-color: #BCFFBA;
+    border: 1px solid #73B370
+}
+
+input.ng-invalid.ng-touched {
+    background-color: #FEC7B3;
+    border: 1px solid #B30C00
+}

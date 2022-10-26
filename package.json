@@ -1,0 +1,9 @@
+{
+  "name": "formAngular",
+  "version": "1.0.0",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.7",
+    "angular-input-masks": "^4.4.1",
+    "br-validations": "^0.3.1"
+  }
+}
